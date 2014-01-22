@@ -1,0 +1,49 @@
+<?php
+$this->layout()->setVariables(array(
+		'title'=>'CONTATO', 
+		'robots' => 'index,follow',
+		'descriptions'=>'O café que é música para o paladar. O café que você nunca esqueceu está de volta. Mais especial e gostoso do que nunca. E não é só ele que voltou. A canção que marcou toda uma geração também. Deguste seu Seleto e sinta novamente aquele sabor delicioso. Afinal, o que é especial a gente nunca esquece. Café Seleto - Seleto Alimentos',
+		'keywords'=>'contato, fale consosco, atendimento, cápsulas seleto, santo grão, starbucks, frans Café, viena, viena café, abic, café gourmet, café em grãos, café solúvel, moído na hora, fresco, depois do almoço, reuniõescafé seleto, cappuccino, achocolatado, café tradicional, café extra forte, café a vácuo, café almofada, cápsula de café,café expresso, café gourmet, café solúvel, filtros de papel, filtro de papel 102, filtro de papel 103, filtro para café, grãos especiais, sabor delicioso, grãos nobres, café, nespresso, pilão, café pilão, melitta, café do ponto, ponto do café, na hora, tomar café, mamãe prepara, carinho, qualquer hora, é hora de café, saborear, cafezinho, momento seleto, feijão seleto, preparo de morango seleto, café da manhã, xícaras, cafés, cafes, café em capsulas, cápsulas compatíveis com nespresso, expresso, coador, bolos seleto, massa para bolo, bolo pronto, dona benta, receitas, receita, barista, otávio café, café com leite, torrefação, maior da américa latina, indústria de torrefação', 
+		'author' => 'SpicyWeb | http://www.spicyweeb.com.br',
+		'revisit-after' => '1 days'		
+));
+?>
+<div id="contato">
+	<div id="conteudo_contato">
+		<div id="fale_conosco">
+			<h2>FALE CONOSCO</h2>
+			<p class="txt_contato">Rua Achilles Orlando Curtolo, 467 - barra funda - sp - cep: 01144-010</p>
+			<div id="mapa">
+				<iframe width="460" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=01144-010&amp;aq=&amp;sll=-14.239424,-53.186502&amp;sspn=68.60595,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=01144-010&amp;t=m&amp;ll=-23.52252,-46.672325&amp;spn=0.027544,0.039482&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+				<br />
+				<small><a href="https://maps.google.com.br/maps?f=q&amp;source=embed&amp;hl=pt-BR&amp;geocode=&amp;q=01144-010&amp;aq=&amp;sll=-14.239424,-53.186502&amp;sspn=68.60595,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=01144-010&amp;t=m&amp;ll=-23.52252,-46.672325&amp;spn=0.027544,0.039482&amp;z=14&amp;iwloc=A" style="color:#FFF;text-align:left">Exibir mapa ampliado</a></small>
+			</div>
+			<?php 
+			//print_r($this->form->getMessages());
+			?>
+			<div id="form">
+				<?php 
+				$form = $this->form;
+				$form->setAttribute('action', $this->url('seletoContato'));
+				$form->prepare();
+				echo $this->form()->openTag($form);
+					
+					echo $this->formRow($form->get('nome'));
+					echo "<br class='clear'>";
+					echo $this->formRow($form->get('email'));
+					echo "<br class='clear'>";
+					echo $this->formRow($form->get('phone'));					
+					echo $this->formRow($form->get('destinatario'));
+					echo "<br class='clear'>";
+					echo $this->formRow($form->get('mensagem'));
+					echo "<br class='clear'>";
+					echo "<input id='btnLimpar' type='reset' class='limpar' value='LIMPAR'>";
+					echo $this->formSubmit($form->get('submit'));
+				
+				echo $this->form()->closeTag();
+				?>
+				<br style="clear: both;" />			
+			</div>			
+		</div>
+	</div>
+</div>
